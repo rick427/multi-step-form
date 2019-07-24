@@ -6,7 +6,7 @@ const Success = () => {
     return (
         <MuiThemeProvider>
             <>
-            <AppBar title="Success"/>
+            <AppBar title="Successadd"/>
              <h1>Thank you for your submission</h1>
              <p>You will get an email about more stuff</p>
             </>
