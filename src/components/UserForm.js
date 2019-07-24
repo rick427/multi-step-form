@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FormDetails from './FormDetails';
 import FormPersonal from './FormPersonal';
 import Confirm from './Confirm';
+import Success from './Success';
 
 class UserForm extends Component {
     state = {
@@ -64,7 +65,9 @@ class UserForm extends Component {
                     />
                 )
             case 4:
-                return <h1>Success</h1>
+                return (
+                    <Success/>
+                )
             default: 
         }
         return (
