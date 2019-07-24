@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import FormDetails from './FormDetails';
+import FormPersonal from './FormPersonal';
+import Confirm from './Confirm';
 
 class UserForm extends Component {
     state = {
@@ -19,6 +21,7 @@ class UserForm extends Component {
         });
     }
 
+    //proceed to previous step
     prevStep = () => {
         const {step} = this.state;
         this.setState({
@@ -37,16 +40,29 @@ class UserForm extends Component {
         switch (step){
             case 1:
                 return (
-                    <FormDetails 
-                      nextStep={this.nextStep} 
+                    <FormPersonal 
+                      nextStep={this.nextStep}
                       handleChange={this.handleChange} 
                       values={values}
                     />
                 )
             case 2:
-                return <h1>FormPersonal</h1>
+                return (
+                    <FormDetails
+                      nextStep={this.nextStep}
+                      prevStep={this.prevStep}
+                      handleChange={this.handleChange}
+                      values={values}
+                    />
+                )
             case 3:
-                return <h1>Confirm</h1>
+                return (
+                    <Confirm
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+                        values={values}
+                    />
+                )
             case 4:
                 return <h1>Success</h1>
             default: 

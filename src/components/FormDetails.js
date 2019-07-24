@@ -11,31 +11,36 @@ class FormDetails extends Component {
         this.props.nextStep();
     }
 
+    back = e => {
+        e.preventDefault();
+        this.props.prevStep();
+    }
+
     render() {
         const {values, handleChange} = this.props;
         return (
             <MuiThemeProvider>
               <>
-                <AppBar title="Enter User Details"/> 
+                <AppBar title="Enter Personal Details"/> 
                 <TextField
-                  hintText="Enter your first name"
-                  floatingLabelText="First Name"
-                  onChange={handleChange('firstName')}
-                  defaultValue={values.firstName}
+                  hintText="Enter your occupation"
+                  floatingLabelText="Occupation"
+                  onChange={handleChange('occupation')}
+                  defaultValue={values.occupation}
                 />
                 <br/>
                 <TextField
-                  hintText="Enter your Last name"
-                  floatingLabelText="Last Name"
-                  onChange={handleChange('lastName')}
-                  defaultValue={values.lastName}
+                  hintText="Enter your City"
+                  floatingLabelText="City"
+                  onChange={handleChange('city')}
+                  defaultValue={values.city}
                 />
                 <br/>
                 <TextField
-                  hintText="Enter your email"
-                  floatingLabelText="Email"
-                  onChange={handleChange('email')}
-                  defaultValue={values.email}
+                  hintText="Enter your Bio"
+                  floatingLabelText="Bio"
+                  onChange={handleChange('bio')}
+                  defaultValue={values.bio}
                 />
                 <br/>
                 <RaisedButton
@@ -43,6 +48,12 @@ class FormDetails extends Component {
                   primary={true}
                   style={styles.button}
                   onClick={this.continue}
+                />
+                <RaisedButton
+                  label="Back"
+                  primary={true}
+                  style={styles.button}
+                  onClick={this.back}
                 />
               </>
             </MuiThemeProvider>
