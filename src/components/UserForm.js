@@ -27,8 +27,8 @@ class UserForm extends Component {
     }
 
     //handleFields Change
-    handleChange = e => {
-        this.setState({[e.target.name]: e.target.value})
+    handleChange = input => e => {
+        this.setState({[input]: e.target.value})
     }
 
     render() {
@@ -49,6 +49,7 @@ class UserForm extends Component {
                 return <h1>Confirm</h1>
             case 4:
                 return <h1>Success</h1>
+            default: 
         }
         return (
             <div>
